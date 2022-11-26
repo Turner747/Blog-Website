@@ -57,13 +57,16 @@ app.get("/posts/:title", (req, res) => {
     
     if (storedTitle === requestedTitle) {
       res.render("post", { post: post });
-    } else {
-      res.render("post", { post: {title: "404 Page Not Found", 
-            content: "The post you are looking for has been moved or no longer exists."} });
     }
   });
 
-  res.redirect("/");
+  res.render("post", {
+		post: {
+			title: "404 Page Not Found",
+			content:
+				"The post you are looking for has been moved or no longer exists.",
+		},
+	});
 });
 
 
