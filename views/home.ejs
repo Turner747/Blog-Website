@@ -1,0 +1,12 @@
+
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p><%= homeContent %> </p>
+
+<% posts.forEach((post) => {%>
+    <%- include("partials/post-summary", {post: post}) %>
+<%}); %>
+
+<%- include("partials/footer") -%>
