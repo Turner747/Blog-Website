@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 const mongoose = require("mongoose");
 mongoose.connect(
-	"mongodb+srv://admin-josh:zq5Ya0El2Q0IvTVN@cluster0.vwcttrg.mongodb.net/blogDB",
+	"mongodb+srv:/uri/blogDB",
 	{ useNewUrlParser: true}
 );
 
