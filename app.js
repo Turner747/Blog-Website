@@ -1,14 +1,14 @@
-//jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const port = process.env.PORT || 3000;
 
+
 const mongoose = require("mongoose");
 mongoose.connect(
-	"mongodb+srv:/uri/blogDB",
+	process.env.DB_URI + "/blogDB",
 	{ useNewUrlParser: true}
 );
 
