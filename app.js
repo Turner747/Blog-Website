@@ -5,8 +5,8 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const port = process.env.PORT || 3000;
 
-
 const mongoose = require("mongoose");
+mongoose.set("strictQuery", true);
 mongoose.connect(
 	process.env.DB_URI + "/blogDB",
 	{ useNewUrlParser: true}
@@ -27,7 +27,6 @@ app.locals._ = _;
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
 
 app.get("/", (req, res) => {
 
